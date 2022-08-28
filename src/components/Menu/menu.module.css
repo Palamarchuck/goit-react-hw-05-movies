@@ -1,0 +1,30 @@
+.wrapper{
+    padding: 25px 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 30px;
+
+}
+
+.menu {
+    list-style: none ;
+    display: flex;
+    
+    
+}
+
+.link {
+    display: inline-block;
+    padding: 10px 15px;
+    color: black;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.link.active {
+    color: rgb(228, 113, 19);
+
+}
