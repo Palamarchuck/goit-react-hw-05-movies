@@ -1,18 +1,19 @@
 import { useState, useEffect } from 'react';
-import { fetchPopular } from 'components/FetchApi/FetchApi';
-import MovieList from '../../components/MovieList/MovieList'
-import styles from './Home.module.css'
+import { Link, useParams,} from 'react-router-dom';
+import { fetchCredits } from 'components/FetchApi/FetchApi';
 
-const Home = () => {
 
+const CastPage = () => {
     const [state, setState] = useState({
         items: [],
         loading: false,
         error: null,
-    })
+    });
+
+    const { id } = useParams();
     
     useEffect(() => {
-        const fetchMoviePopular = async () => {
+        const fetchMovie = async () => {
             
             try {
                 setState(prevState => ({
@@ -20,11 +21,11 @@ const Home = () => {
                     loading: true,
                     error: null,
                 }))
-                const result = await fetchPopular();
+                const result = await fetchCredits(id);
                 setState(prevState => {
                     return {
                         ...prevState,
-                        items: [...prevState.items, ...result]
+                        items: result.cast,
                     }
                 })
             } catch (error) {
@@ -42,22 +43,33 @@ const Home = () => {
                 })
             }
         };
-        fetchMoviePopular();
-    }, []);
+        fetchMovie();
+    }, [id, setState]);
 
-    const { items, loading, error } = state;
-    // const elements = items.map(({ id, title }) => <li key={id}>
-    //     <Link to={`/movies/${id}`}>{title}</Link>
-    // </li>)
+  
 
+    const { items } = state;
+    const elements = items.map(({ id, name, character, profile_path }) => (
+        <li key={id}>            
+                <img
+                    loading="lazy"
+                    src={'https://image.tmdb.org/t/p/w500' + profile_path}
+                    alt={name}
+                    width={`50px`}
+                />
+            <h3>{name}</h3>
+            <p>{character}</p>
+        </li>
+    ));
+        
     return (
         <div className="container">
-            <h2>Popular movie</h2>
-            {items.length > 0 && <MovieList items={items} />}
-            {loading && <p>...load popular movie</p>}
-            {error && <p>...Popular movies load failed</p>}
+            <h4>Cast</h4>
+            <ul>{elements}</ul>
         </div>
     
     )
+   
 }
-export default Home;
+
+export default CastPage;

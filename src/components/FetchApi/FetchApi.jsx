@@ -1,4 +1,3 @@
-// import toast from 'react-hot-toast';
 
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '03779c52c93ea63ebe46db37a334d7d8';
@@ -36,7 +35,6 @@ export const fetchById = async movieId => {
     const data = await response.json();
     return data;
   } catch (error) {
-    // toast.error('Something vent wrong:(');
     console.log(error);
   }
 };
@@ -49,7 +47,6 @@ export const fetchCredits = async movieId => {
     const data = await response.json();
     return data;
   } catch (error) {
-    // toast.error('Something vent wrong:(');
     console.log(error);
   }
 };
@@ -62,7 +59,6 @@ export const fetchReviews = async movieId => {
     const data = await response.json();
     return data;
   } catch (error) {
-    // toast.error('Something vent wrong:(');
     console.log(error);
   }
 };
