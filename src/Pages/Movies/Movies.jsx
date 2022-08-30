@@ -18,9 +18,6 @@ const Movies = () => {
     const search = searchParams.get("search");
     console.log(search)
 
-
-    // const [search, setSearch] = useState("");
-
     useEffect(() => {
         const fetchMovies = async () => {
             try {
@@ -52,7 +49,7 @@ const Movies = () => {
 
     const changeSearch = ({search}) => {
         // setSearch(search)
-        setSearchParams({query: search})
+        setSearchParams({search})
     }
 
     const { items } = state;

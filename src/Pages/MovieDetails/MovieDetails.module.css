@@ -1,0 +1,27 @@
+
+.main{
+    margin-left: 15px;
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid #ccc;
+
+}
+
+.mainInfo{
+    margin-left: 20px;
+
+}
+
+.info{
+    margin-left: 15px;
+    border: 1px solid #ccc;
+}
+
+.btn{
+    margin-left: 15px;
+    margin-bottom: 15px;
+
+}

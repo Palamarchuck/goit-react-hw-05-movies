@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams,} from 'react-router-dom';
+import {  useParams,} from 'react-router-dom';
 import { fetchCredits } from 'components/FetchApi/FetchApi';
+import styles from './CastPage.module.css'
 
 
 const CastPage = () => {
@@ -50,15 +51,18 @@ const CastPage = () => {
 
     const { items } = state;
     const elements = items.map(({ id, name, character, profile_path }) => (
-        <li key={id}>            
+        <li key={id} className={styles.castList}>            
+            <div className={styles.castListImg}>   
                 <img
-                    loading="lazy"
-                    src={'https://image.tmdb.org/t/p/w500' + profile_path}
-                    alt={name}
-                    width={`50px`}
+                        src={'https://image.tmdb.org/t/p/w500' + profile_path}
+                        alt={name}
+                        width={`50px`}
                 />
-            <h3>{name}</h3>
-            <p>{character}</p>
+            </div> 
+            <div className={styles.castListInfo}> 
+                <h3>{name}</h3>
+                <p>Character: {character}</p>
+            </div>  
         </li>
     ));
         
