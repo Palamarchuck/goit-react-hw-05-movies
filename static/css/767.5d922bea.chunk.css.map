@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/767.5d922bea.chunk.css","mappings":"AAAA,0BACI,YACJ,CACA,8BACI,gBAAiB,CACjB,eACJ","sources":["Pages/CastPage/CastPage.module.css"],"sourcesContent":[".castList{\n    display: flex;\n}\n.castListInfo{\n    margin-left: 10px;\n    margin-top: auto;\n}"],"names":[],"sourceRoot":""}
