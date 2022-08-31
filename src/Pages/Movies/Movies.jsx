@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import MovieSearchForm from 'components/MovieSearchForm/MovieSearchForm';
 import { fetchByQuery } from 'components/FetchApi/FetchApi';
 import MovieList from 'components/MovieList/MovieList';
-import styles from './Movies.module.css'
+// import styles from './Movies.module.css'
 
 
 const Movies = () => {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { fetchPopular } from 'components/FetchApi/FetchApi';
 import MovieList from '../../components/MovieList/MovieList'
-import styles from './Home.module.css'
+// import styles from './Home.module.css'
 
 const Home = () => {
 
@@ -46,10 +46,7 @@ const Home = () => {
     }, []);
 
     const { items, loading, error } = state;
-    // const elements = items.map(({ id, title }) => <li key={id}>
-    //     <Link to={`/movies/${id}`}>{title}</Link>
-    // </li>)
-
+    
     return (
         <div className="container">
             <h2>Popular movie</h2>
